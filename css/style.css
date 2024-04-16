@@ -1,0 +1,562 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
+
+/* Define CSS variables */
+:root {
+    --primary-color: #0063cc;
+    --secondary-color: #e2e6ea;
+    --success-color: #28a745
+}
+body, html {
+    height: 100%; /* Full height */
+    margin: 0; /* Remove default margin */
+    font-family: 'Jost', sans-serif; /* Consistent font for the whole page */
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    text-align: center; /* Center text alignment for all child elements */
+}
+
+.background-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Send to back */
+    object-fit: cover; /* Cover the entire .header area */
+}
+
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Space between logo and nav links */
+    align-items: center;
+    padding: 15px 0px; /* Padding on sides */
+    background-color: rgba(8, 8, 8, 0.5); /* Semi-transparent background for better visibility */
+    z-index: 10; /* Ensure navbar is above background image */
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.navbar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+
+.nav-item a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white; /* White text for links */
+    transition: color 0.3s;
+}
+    
+
+
+.nav-item a:hover, .nav-item a.active {
+    color: #FFD700; /* Gold color for hover and active state */
+}
+
+.container {
+    position: relative; /* Allow absolute positioning for children */
+    z-index: 10;
+}
+
+.intro-text, .welcome-text {
+    color: rgb(208, 161, 21);
+    text-shadow: 0 30px 25px rgba(0, 0, 0, 0.5); /* Enhance readability */
+}
+
+.btn {
+    margin: 10px;
+    padding: 0.8em 1.6em;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    text-decoration: none;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #b99541;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .nav-item a {
+        padding: 10px; /* Smaller padding for smaller screens */
+    }
+    .btn {
+        padding: 0.6em 1.2em; /* Smaller buttons on small screens */
+    }
+}
+
+/* ======= About style ======= */
+
+
+.about {
+    margin-left: 100px; /* Adjust the margin as needed to move the section to the right */
+}
+.about-img img {
+    width: 300px; /* Adjust the width as desired */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+}
+.about-img {
+    width: 50%;
+    min-width: 300px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-img .img:before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    right: 0;
+    left: 45px;
+    bottom: 0;
+    background-color: #2b2b2b;
+}
+.about-img .img:after {
+    content: '';
+    width: 50%;
+    position: absolute;
+    top: -8%;
+    bottom: 55%;
+    left: -5%;
+    background-image: url(./images/dots.png);
+    background-repeat: repeat;
+    z-index: 0;
+}
+
+.about-img .img {
+    width: 300px;
+    padding: 0 30px 30px 15px;
+    position: relative;
+}
+
+.about-img .img img {
+    position: relative;
+    z-index: 2;
+    background: #1b1b1b;
+    height: 300px;
+}
+
+.about-img img:hover {
+    transform: scale(0.95);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.about ul {
+    padding: 1rem 0rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.about ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.about ul li i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #444;
+    color: #fff;
+    font-size: 12px;
+}
+
+.about ul span {
+    color: #333;
+}
+
+.about-bottom {
+
+    display: flex;
+    gap: 3rem;
+    margin-top: 1rem;
+    border-top: 1px solid #f1f1f1;
+    padding: 1rem;
+}
+.about p, .about ul {
+    font-size: 1.3rem; /* Increase the font size as needed */
+    line-height: 1.5; /* Optional: Adjust line-height for better readability */
+}
+
+.about h2 {
+    font-size: 1.8rem; /* Adjust the font size of the title */
+    font-weight: bold; /* Optional: Add more weight to the title */
+}
+.signature {
+    width: 80px;
+}
+
+/* General text font size */
+.about-img p, .about-bottom p {
+    font-size: 1.2rem; /* Adjust the size as needed (e.g., 1.2rem or larger) */
+    color: #333; /* Optional: adjust the text color */
+}
+
+/* Font size for list items */
+.about ul span {
+    font-size: 1.1rem; /* Adjust the size as needed (e.g., 1.1rem or larger) */
+    color: #333; /* Optional: adjust the text color */
+}
+
+/* Optional: Font size for headers if needed */
+.about-bottom h2 {
+    font-size: 1.5rem; /* Adjust the size as needed */
+}
+
+
+
+/* work*/
+
+
+
+
+.gallery ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+.gallery li{
+    font-size: 14px;
+    line-height: 21px;
+    color: #999;
+    cursor: pointer;
+}
+.gallery .active,
+    .gallery li:hover{
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.grid-wrapper {
+    max-width: 100%;
+    display: grid;
+    grid-gap: 1.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 200px;
+    grid-auto-flow: dense;
+}
+
+
+.grid-wrapper img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+/* Main CSS */
+.grid-wrapper .image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-wrapper .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.grid-wrapper .wide {
+    grid-column: span 2;
+}
+
+.grid-wrapper .tall {
+    grid-row: span 2;
+}
+
+.grid-wrapper .big {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section .container {
+    width: 100%;
+}
+
+
+.heading {
+    width: 100%;
+    min-width: 300px;
+    text-align: center;
+    padding: 0rem;
+    padding-top: 2rem;
+}
+
+
+section .box {
+    max-width: 50%;
+    min-width: 300px;
+}
+
+.bg-light {
+    background-color: #fff;
+}
+
+.bg-light .heading h2 {
+    color: #000;
+}
+.bg-light .title {
+    color: #111;
+}
+.bg-light p {
+    color: #333;
+}
+
+.bg-dark {
+    background-color: #111;
+}
+
+.bg-dark .heading h2 {
+    color: #ffff;
+}
+.bg-dark .title {
+    color: #fff;
+}
+.bg-dark p {
+    color: #aaa;
+}
+
+
+
+/* ======= Footer Styles ======= */
+
+/* ======= Footer style ======= */
+
+
+/* Styling for the Subscribe Now button */
+.newsletter form button {
+    width: 200px; /* Adjust width to desired size */
+    height: 40px; /* Adjust height to desired size */
+    border: none; /* Remove border */
+    border-radius: 20px; /* Add rounded corners */
+    padding: 10px 15px; /* Add padding for a better appearance */
+    background: linear-gradient(45deg, #d29718, #c17813); /* Gradient background */
+    color: #fff; /* White text color */
+    font-size: 16px; /* Adjust font size */
+    font-weight: bold; /* Make text bold */
+    text-transform: uppercase; /* Convert text to uppercase */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background 0.3s ease-in-out; /* Smooth transition effect */
+}
+
+/* Hover effect for the Subscribe Now button */
+.newsletter form button:hover {
+    background: linear-gradient(45deg, #c17813, #bb2424); /* Change background color on hover */
+}
+
+
+
+/* Styling for the Quick Links box to align it slightly more to the left */
+.second-footer .quick-links {
+    flex: 1; 
+    margin-right: 5%; 
+    text-align: left; 
+}
+
+/* Additional styles for the list and links within the Quick Links box */
+.second-footer .quick-links ul {
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove padding from the list */
+    margin: 0; /* Remove margin from the list */
+}
+
+.second-footer .quick-links ul li {
+    margin-bottom: 5px; /* Add spacing between list items */
+}
+
+.second-footer .quick-links ul li a {
+    text-decoration: none; /* Remove underline from links */
+    color: #d48836; /* Set color for links */
+    text-transform: capitalize; /* Capitalize link text */
+}
+
+.second-footer .quick-links ul li a:hover {
+    color: #b0c537; /* Change color on hover */
+}
+
+/* Styling for the second-footer container to make it horizontal */
+.second-footer .container {
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between; /* Distribute space between the boxes */
+    align-items: center; /* Center the boxes vertically */
+    padding: 0 20px; /* Add padding for spacing */
+}
+
+/* Styling for each box in the container */
+.second-footer .box {
+    flex: 1; /* Allow each box to take up equal space */
+    margin: 0 20px; /* Add margin between the boxes */
+    text-align: left; /* Align text content to the left */
+}
+
+/* Additional styles for the title in each box */
+.second-footer .title {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+/* Styling for the lists within the boxes */
+.second-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Styling for each list item */
+.second-footer ul li {
+    margin-bottom: 5px;
+}
+
+/* Styling for links within the lists */
+.second-footer ul li a {
+    text-decoration: none;
+    color: #aaa;
+}
+
+/* Hover effect for links */
+.second-footer ul li a:hover {
+    color: #fff;
+}
+
+/* Styling for the second-footer */
+.second-footer {
+    background-color: #050400d0;
+    padding: 4rem 0;
+    border-bottom: 1px solid rgba(233, 182, 99, 0.1);
+}
+
+
+
+.copyright {
+    background-color: #000000c1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.51rem 6%;
+
+}
+
+.copyright p {
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+}
+
+.copyright p a {
+    color: #f1f1f1;
+}
+
+/* Styling for the social icons list */
+.second-footer .box ul.social-icons {
+    display: flex; /* Align icons in a row */
+    justify-content: space-around; /* Space the icons evenly */
+    margin-top: 10px; /* Add margin above the icons */
+}
+
+.second-footer .box ul.social-icons li {
+    list-style: none; /* Remove default list styling */
+}
+
+.second-footer .box ul.social-icons li a {
+    color: #2f1254; /* Set icon color */
+    text-decoration: none; /* Remove underline */
+    margin: 0 10px; /* Add margin between icons */
+    font-size: 1.5rem; /* Set icon size */
+}
+
+.second-footer .box ul.social-icons li a:hover {
+    color: #fff; /* Change color on hover */
+}
+
+    /* CSS animation */
+
+/* Slide-in animation from the left */
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Pop-up animation */
+@keyframes popUp {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply the slide-in animation to the image container */
+.about-img {
+    animation: slideInFromLeft 1.5s ease-in-out 0.5s forwards;
+}
+
+/* Apply the pop-up animation to the signature image */
+.signature {
+    animation: popUp 1.5s ease-in-out 0.5s forwards;
+}
